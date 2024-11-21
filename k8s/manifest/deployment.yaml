@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-deployment
+  labels:
+    app: ecommerce
+spec:
+  replicas: 2  # Number of Nginx pods to run
+  selector:
+    matchLabels:
+      app: ecommerce
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+    spec:
+      containers:
+      - name: nginx
+        image: ecommerce-website:latest  # Replace with your Docker image name
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: website-volume
+          mountPath: /usr/share/nginx/html  # Path where Nginx serves files from
+      volumes:
+      - name: website-volume
+        hostPath:
+          path: /path/to/your/local/website/folder  # Replace with the path to your website files
+          type: Directory
+

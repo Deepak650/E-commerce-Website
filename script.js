@@ -1,30 +1,57 @@
+// Product data
 const products = [
-    { id: 1, name: "Product 1", price: 50 },
-    { id: 2, name: "Product 2", price: 45 },
+    {
+        id: 1,
+        name: "Smartphone",
+        image: "assets/images/smartphone.jpg", // Replace with actual path to image
+        price: "$499",
+    },
+    {
+        id: 2,
+        name: "Laptop",
+        image: "assets/images/laptop.jpg", // Replace with actual path to image
+        price: "$799",
+    },
+    {
+        id: 3,
+        name: "Headphones",
+        image: "assets/images/headphones.jpg", // Replace with actual path to image
+        price: "$199",
+    },
+    {
+        id: 4,
+        name: "Smartwatch",
+        image: "assets/images/smartwatch.jpg", // Replace with actual path to image
+        price: "$150",
+    },
     // Add more products as needed
 ];
 
+// Function to create product cards
+function createProductCard(product) {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+
+    card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <div class="product-info">
+            <h3>${product.name}</h3>
+            <p class="price">${product.price}</p>
+            <a href="cart.html" class="buy-button">Buy Now</a>
+        </div>
+    `;
+    
+    return card;
+}
+
+// Display products on the page
 function displayProducts() {
-    const productListElement = document.getElementById("productList");
-
-    products.forEach((product) => {
-        const productElement = document.createElement("div");
-        productElement.classList.add("product");
-
-        productElement.innerHTML = `
-              <img src="product${product.id}.jpg" alt="${product.name}">
-              <h3>${product.name}</h3>
-              <p>Price: $${product.price}</p>
-              <button class="button" onclick="addToCart(${product.id})">Add to Cart</button>
-          `;
-
-        productListElement.appendChild(productElement);
+    const productList = document.getElementById('productList');
+    products.forEach(product => {
+        const productCard = createProductCard(product);
+        productList.appendChild(productCard);
     });
 }
 
-function addToCart(productId) {
-    // Implement your cart logic (adding products to the cart)
-    alert(`Product with ID ${productId} added to cart!`);
-}
-
-window.onload = displayProducts;
+// Call displayProducts when the page loads
+document.addEventListener('DOMContentLoaded', displayProducts);

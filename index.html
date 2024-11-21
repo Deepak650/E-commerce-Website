@@ -4,17 +4,53 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
-        <title>E-commerce Website || 100 JavaScript Projects</title>
+        <title>Home | E-commerce</title>
     </head>
     <body>
         <header>
-            <h1>E-commerce Website</h1>
-            <a href="cart.html">View Cart</a>
+            <div class="logo">E-Shop</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="checkout.html">Checkout</a>
+            </nav>
         </header>
 
-        <section id="productList">
-            <!-- Product listing will be displayed here using JavaScript -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to E-Shop</h1>
+                <p>Your favorite place to buy the best tech products online</p>
+                <a href="products.html" class="cta-button">Shop Now</a>
+            </div>
         </section>
+
+        <section class="featured-categories">
+            <h2>Shop by Category</h2>
+            <div class="categories">
+                <div class="category-card">
+                    <img src="assets/images/category1.jpg" alt="Category 1" />
+                    <h3>Earbuds</h3>
+                </div>
+                <div class="category-card">
+                    <img src="assets/images/category2.jpg" alt="Category 2" />
+                    <h3>Smartwatches</h3>
+                </div>
+                <div class="category-card">
+                    <img src="assets/images/category3.jpg" alt="Category 3" />
+                    <h3>Speakers</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div id="productList" class="product-list"></div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 E-Shop</p>
+        </footer>
 
         <script src="script.js"></script>
     </body>

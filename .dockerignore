@@ -1,0 +1,32 @@
+# Ignore node_modules if using Node.js for any tooling or build processes
+node_modules/
+
+# Ignore all log files
+*.log
+
+# Ignore git directories and files
+.git/
+.gitignore
+
+# Ignore Dockerfile and .dockerignore itself
+Dockerfile
+.dockerignore
+
+# Ignore all hidden files or directories (e.g., .DS_Store for macOS, .env for environment variables)
+.*
+
+# Ignore build/temporary files that might be generated
+/build/
+dist/
+
+# If you're using any configuration files for development (e.g., webpack, dev-server, etc.)
+/config/
+
+# Ignore IDE/editor folders (e.g., VSCode, Sublime Text, etc.)
+.vscode/
+.idea/
+.sublime-text-*
+
+# Ignore any other test or debug folders
+/tests/
+test/

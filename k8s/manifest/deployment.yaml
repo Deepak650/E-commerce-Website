@@ -16,15 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: ecommerce-website:latest  # Replace with your Docker image name
+        image: deeshrucontainer.azurecr.io/ecommercewebsite:latest  # Replace with your Docker image name
+        imagePullPolicy: Always
         ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: website-volume
-          mountPath: /usr/share/nginx/html  # Path where Nginx serves files from
-      volumes:
-      - name: website-volume
-        hostPath:
-          path: /path/to/your/local/website/folder  # Replace with the path to your website files
-          type: Directory
-
+        - containerPort: 8080
